@@ -36,7 +36,7 @@ endif
 " Use this variable inside your local configuration to declare
 " which package you would like to include
 if ! exists('g:vimified_packages')
-    let g:vimified_packages = ['general', 'fancy', 'os', 'coding', 'python', 'ruby', 'html', 'css', 'js', 'clojure', 'haskell', 'color']
+    let g:vimified_packages = ['general', 'fancy', 'os', 'coding', 'python', 'ruby', 'html', 'css', 'js', 'clojure', 'haskell', 'color', 'clang']
 endif
 " }}}
 
@@ -170,13 +170,6 @@ if count(g:vimified_packages, 'coding')
     " same in visual mode
     :vmap <leader>f y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
 
-    Bundle 'scrooloose/syntastic'
-    let g:syntastic_enable_signs=1
-    let g:syntastic_auto_loc_list=1
-    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'python', ], 'passive_filetypes': ['html', 'css', 'slim'] }
-
-    " --
-
     Bundle 'vim-scripts/Reindent'
 
     autocmd FileType gitcommit set tw=68 spell
@@ -221,11 +214,17 @@ endif
 
 " _. Clang {{{
 if count(g:vimified_packages, 'clang')
-    Bundle 'Rip-Rip/clang_complete'
+    "Bundle 'Rip-Rip/clang_complete'
     Bundle 'LucHermitte/clang_indexer'
     Bundle 'newclear/lh-vim-lib'
-    Bundle 'LucHermitte/vim-clang'
+    "Bundle 'LucHermitte/vim-clang'
     Bundle 'devx/c.vim'
+    Bundle 'octol/vim-cpp-enhanced-highlight'
+    Bundle 'rhysd/vim-clang-format'
+        let g:clang_format#detect_style_file = 1
+
+    autocmd FileType c,cpp ClangFormatAutoEnable
+    autocmd FileType c,cpp set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 endif
 " }}}
 
@@ -316,11 +315,12 @@ if count(g:vimified_packages, 'color')
     Bundle 'xero/sourcerer.vim'
 
     " During installation the molokai colorscheme might not be avalable
-    if filereadable(globpath(&rtp, 'colors/molokai.vim'))
-      colorscheme molokai
-    else
-      colorscheme default
-    endif
+    "if filereadable(globpath(&rtp, 'colors/molokai.vim'))
+    "  colorscheme molokai
+    "else
+      set background=dark
+      colorscheme solarized
+    "endif
 else
     colorscheme default
 endif
@@ -601,7 +601,7 @@ nmap <tab> :NERDTreeToggle<cr>
 
 " . folding {{{
 
-set foldlevelstart=0
+set foldlevelstart=2
 set foldmethod=syntax
 
 " Space to toggle folds.
