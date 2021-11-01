@@ -320,6 +320,7 @@ if count(g:vimified_packages, 'color')
     "else
       set background=dark
       colorscheme solarized
+      set t_Co=256
     "endif
 else
     colorscheme default
@@ -444,10 +445,11 @@ set noswapfile
 
 set modelines=0
 set noeol
+set number
 if exists('+relativenumber')
   set relativenumber
 endif
-set numberwidth=3
+set numberwidth=4
 set winwidth=83
 set ruler
 if executable('zsh')
