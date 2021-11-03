@@ -336,7 +336,7 @@ filetype plugin indent on
 syntax on
 
 " Set 5 lines to the cursor - when moving vertically
-set scrolloff=0
+set scrolloff=5
 
 " It defines where to look for the buffer user demanding (current window, all
 " windows in other tabs, or nowhere, i.e. open file from scratch every time) and
