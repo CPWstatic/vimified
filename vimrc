@@ -68,13 +68,13 @@ if count(g:vimified_packages, 'general')
     nmap <leader>p :Hammer<cr>
 
     Bundle 'junegunn/vim-easy-align'
-    Bundle 'tpope/vim-endwise'
-    Bundle 'tpope/vim-repeat'
-    Bundle 'tpope/vim-speeddating'
-    Bundle 'tpope/vim-surround'
+    "Bundle 'tpope/vim-endwise'
+    "Bundle 'tpope/vim-repeat'
+    "Bundle 'tpope/vim-speeddating'
+    "Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
-    Bundle 'maxbrunsfeld/vim-yankstack'
-    Bundle 'tpope/vim-eunuch'
+    "Bundle 'maxbrunsfeld/vim-yankstack'
+    "Bundle 'tpope/vim-eunuch'
 
     Bundle 'scrooloose/nerdtree'
     " Disable the scrollbars (NERDTree)
@@ -84,26 +84,26 @@ if count(g:vimified_packages, 'general')
     set winfixwidth
 
 
-    Bundle 'kana/vim-textobj-user'
+    "Bundle 'kana/vim-textobj-user'
     Bundle 'vim-scripts/YankRing.vim'
     let g:yankring_replace_n_pkey = '<leader>['
     let g:yankring_replace_n_nkey = '<leader>]'
     let g:yankring_history_dir = s:dotvim.'/tmp/'
     nmap <leader>y :YRShow<cr>
 
-    Bundle 'michaeljsmith/vim-indent-object'
-    let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
+    "Bundle 'michaeljsmith/vim-indent-object'
+    "let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
 
-    Bundle 'Spaceghost/vim-matchit'
+    "Bundle 'Spaceghost/vim-matchit'
     Bundle 'kien/ctrlp.vim'
     let g:ctrlp_working_path_mode = ''
 
-    Bundle 'vim-scripts/scratch.vim'
+    "Bundle 'vim-scripts/scratch.vim'
 
     Bundle 'troydm/easybuffer.vim'
     nmap <leader>be :EasyBufferToggle<cr>
 
-    Bundle 'terryma/vim-multiple-cursors'
+    "Bundle 'terryma/vim-multiple-cursors'
 endif
 " }}}
 
@@ -115,6 +115,7 @@ if count(g:vimified_packages, 'fancy')
 
     Bundle 'vim-airline/vim-airline'
     Bundle 'vim-airline/vim-airline-themes'
+    let g:airline#extensions#tabline#enabled = 1
 endif
 " }}}
 
@@ -149,7 +150,7 @@ if count(g:vimified_packages, 'coding')
     Bundle 'majutsushi/tagbar'
     nmap <leader>t :TagbarToggle<CR>
 
-    Bundle 'gregsexton/gitv'
+    "Bundle 'gregsexton/gitv'
 
     Bundle 'joonty/vdebug.git'
 
@@ -215,10 +216,10 @@ endif
 " _. Clang {{{
 if count(g:vimified_packages, 'clang')
     "Bundle 'Rip-Rip/clang_complete'
-    Bundle 'LucHermitte/clang_indexer'
-    Bundle 'newclear/lh-vim-lib'
+    "Bundle 'LucHermitte/clang_indexer'
+    "Bundle 'newclear/lh-vim-lib'
     "Bundle 'LucHermitte/vim-clang'
-    Bundle 'devx/c.vim'
+    "Bundle 'devx/c.vim'
     Bundle 'octol/vim-cpp-enhanced-highlight'
     Bundle 'rhysd/vim-clang-format'
         let g:clang_format#detect_style_file = 1
@@ -603,8 +604,8 @@ nmap <tab> :NERDTreeToggle<cr>
 
 " . folding {{{
 
-set foldlevelstart=2
-set foldmethod=syntax
+set foldlevelstart=0
+set foldmethod=indent
 
 " Space to toggle folds.
 nnoremap <space> za
